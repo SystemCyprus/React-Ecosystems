@@ -1,5 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react';
+import { configureStore } from './store.js';
 import App from './App.js';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={configureStore()} >
+        <App />
+    </Provider>,
+
+    document.getElementById('root')
+);
